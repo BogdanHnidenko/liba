@@ -1,10 +1,13 @@
 {
-  "name": "liba-v1.0",
+  "name": "form-label-printer-data",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jsbarcode": "^3.11.6"
   },
   "keywords": [],
   "author": "",
