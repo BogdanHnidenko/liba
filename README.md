@@ -27,6 +27,7 @@
     "currency": "",         // Валюта
     "unit": ""              // Одиниця вимірювання
   }
+```
 2. run container, wait few moments, enjoy develop)))
   ```
     docker run -d -p 8010:80 -v /path/to/skyservice-pos-vue:/app pos
