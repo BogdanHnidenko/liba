@@ -96,58 +96,62 @@ const createWrapContainer = (obj)=> {
 	return divElement
 }
 // Функція для створення HTML структури етикетки
-export function createHtmlToLabelPrinter (strings, data) {
-  // Налаштування розмірів етикеток
-	const dataSize = data.sizes;
-  // Контейнер етикетки
-	const labelContainer = document.createElement('div');
-  // Задаємо id контейнеру
-	labelContainer.setAttribute('id', 'downimg');
-	// Отримуємо стилі для контейнера етикеток
-	const containerStyle = labelStyle(dataSize).container
-	Object.assign(labelContainer.style, containerStyle)
-	// Проходимось по масиву рядків для відображення
-	for(let item of strings){
-    // Якщо це штрихкод
-		if(item.title === 'barcode'){
-      // Створюємо html структуру штрих-коду
-			const barcodeElement = createBarcode(item);
-      // Додаємо до контейнера етикетки
-			labelContainer.appendChild(barcodeElement);
-    // Якщо це рядки, які повинні бути по центру
-		} else if(item.align === 'center'){
-      // Контейнер поля
-			const divElement = document.createElement('div');
-			divElement.textContent = item.value;
-			// Отримуємо стилі для полів що розташовані по центру
-			const style = labelStyle(item).centerItem
-			Object.assign(divElement.style, style)
-      // Додаємо до контейнера етикетки
-			labelContainer.appendChild(divElement);
-    // Якщо це рядки, які повинні бути по боках
-		} else if(item.type === 'wrap'){
-			const divElementWrap = createWrapContainer(item);
-      // Додаємо до контейнера етикетки
-			labelContainer.appendChild(divElementWrap);
-      // Якщо це ціна товару
-		} else if(item.align === 'space-between'){
-      // Контейнер поля ціни
-			const divElement = document.createElement('div');
-			// Отримуємо стилі для поля ціни
-			const stylePrice = labelStyle(item).priceContainer
-			Object.assign(divElement.style, stylePrice)
-			// HTML розмітка для поля ціни
-			const spanElementName = `
-				<span>${item.valueName}</span>
-				<span>
-					<span style="font-weight: 700;">${item.valuePrice}</span>
-					<span style="padding-left: 5px;">${item.valueUnit}</span>
-				</span>
-			`
-			divElement.innerHTML = spanElementName
-      // Додаємо до контейнера етикетки
-			labelContainer.appendChild(divElement);
+export default (strings, data) => {
+	try {
+		// Налаштування розмірів етикеток
+		const dataSize = data.sizes;
+		// Контейнер етикетки
+		const labelContainer = document.createElement('div');
+		// Задаємо id контейнеру
+		labelContainer.setAttribute('id', 'downimg');
+		// Отримуємо стилі для контейнера етикеток
+		const containerStyle = labelStyle(dataSize).container
+		Object.assign(labelContainer.style, containerStyle)
+		// Проходимось по масиву рядків для відображення
+		for(let item of strings){
+			// Якщо це штрихкод
+			if(item.title === 'barcode'){
+				// Створюємо html структуру штрих-коду
+				const barcodeElement = createBarcode(item);
+				// Додаємо до контейнера етикетки
+				labelContainer.appendChild(barcodeElement);
+			// Якщо це рядки, які повинні бути по центру
+			} else if(item.align === 'center'){
+				// Контейнер поля
+				const divElement = document.createElement('div');
+				divElement.textContent = item.value;
+				// Отримуємо стилі для полів що розташовані по центру
+				const style = labelStyle(item).centerItem
+				Object.assign(divElement.style, style)
+				// Додаємо до контейнера етикетки
+				labelContainer.appendChild(divElement);
+			// Якщо це рядки, які повинні бути по боках
+			} else if(item.type === 'wrap'){
+				const divElementWrap = createWrapContainer(item);
+				// Додаємо до контейнера етикетки
+				labelContainer.appendChild(divElementWrap);
+				// Якщо це ціна товару
+			} else if(item.align === 'space-between'){
+				// Контейнер поля ціни
+				const divElement = document.createElement('div');
+				// Отримуємо стилі для поля ціни
+				const stylePrice = labelStyle(item).priceContainer
+				Object.assign(divElement.style, stylePrice)
+				// HTML розмітка для поля ціни
+				const spanElementName = `
+					<span>${item.valueName}</span>
+					<span>
+						<span style="font-weight: 700;">${item.valuePrice}</span>
+						<span style="padding-left: 5px;">${item.valueUnit}</span>
+					</span>
+				`
+				divElement.innerHTML = spanElementName
+				// Додаємо до контейнера етикетки
+				labelContainer.appendChild(divElement);
+			}
 		}
+		return labelContainer
+	} catch (error) {
+		console.error("create-label-html-data -> Помилка у файлі формувння html", error)
 	}
-	return labelContainer
 }
