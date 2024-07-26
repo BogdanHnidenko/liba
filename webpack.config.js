@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/labelPrintData.js', // ваш вхідний файл
+  entry: './src/index.js', // ваш вхідний файл
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
