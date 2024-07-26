@@ -71,7 +71,7 @@ translate: {
 4. Об'єкт з функціями
 ```js
 func: {
-  currencyFormatted: "",    // Назва товару
-  unit: "",                 // Виробник товару
+  currencyFormatted: ()=>{},    // Назва товару
+  unit: ()=>{},                 // Виробник товару
 }
 ```
