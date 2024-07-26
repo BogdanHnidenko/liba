@@ -1,22 +1,4 @@
 // ----------------- Модуль формування рядків для принтера етикеток ---------------------------
-// Об'єкт продукту який потрібен для формування рядків
-// {
-// 	name: '',
-// 	manufacturer: '',
-// 	productType: '',
-// 	vendorCode: '', 
-// 	weight: '',
-// 	size: '',
-// 	description: '',
-// 	barcode: {
-// 		value: '', 
-// 		type: ''
-// 	},
-// 	price: '',
-// 	currency: '',
-// 	unit: '',
-// }
-
 import dateTime from './dateTime.js'; // Модуль для встановлення поточної дати та часу
 export default (data) => {
 	try {
