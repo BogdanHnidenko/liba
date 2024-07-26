@@ -2,9 +2,19 @@
 
 ### Модуль для створення html структури етикеток
 
-1. Для встановлення прописуємо в package.json
+1. Для встановлення пакету прописуємо в package.json
 ```
   "create-label-html-data": "git+https://ansible:ansible_pass@git.skyservice.pro/skyservice/nodejs/bootstrap-vue.git#master",
+```
+2. Для оновлення пакету прописуємо 
+```
+  "npm install create-label-html-data",
+```
+
+### Робота з даним модулем
+1. Створення основного файлу js
+```
+  "npm run build",
 ```
 
 ### Які обʼєкти очікуються
