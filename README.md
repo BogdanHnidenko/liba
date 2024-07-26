@@ -1,14 +1,13 @@
 # create-label-html-data
 
-## Модуль для створення html структури етикеток
+### Модуль для створення html структури етикеток
 
 1. Для встановлення прописуємо в package.json
   ```
     "create-label-html-data": "git+https://ansible:ansible_pass@git.skyservice.pro/skyservice/nodejs/bootstrap-vue.git#master",
   ```
 
-
-## Які обʼєкти очікуються
+### Які обʼєкти очікуються
 1. Об'єкт товару
 ```js
 product: {
@@ -36,7 +35,7 @@ dataPrinter: {
       fields ["Поля для друку"] // Поля які треба друкувати
     },
     sizes: {
-      barWidth: "", 
+      barWidth: "",
       barcodeFont: "",
       barcodeHeight: "",
       dateTimeFont: "",
@@ -64,15 +63,15 @@ dataPrinter: {
 3. Об'єкт перекладу
 ```js
 translate: {
-  weight: "",           // Переклад для поля ваги
-  size: "",             // Переклад для поля розмір
-  price: "",            // Переклад для поля ціни
+  weight: "",     // Переклад для поля ваги
+  size: "",       // Переклад для поля розмір
+  price: "",      // Переклад для поля ціни
 }
 ```
 4. Об'єкт з функціями
 ```js
 func: {
-  currencyFormatted: "",           // Назва товару
-  unit: "",             // Виробник товару
+  currencyFormatted: "",    // Назва товару
+  unit: "",                 // Виробник товару
 }
 ```
