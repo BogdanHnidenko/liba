@@ -2,7 +2,7 @@
 import formString from "./formStrings.js"; // Модуль створення рядків
 import createHTML from "./createHTML.js"; // Модуль створення html розмітки
 
-exports.default = (obj) => {
+module.exports = (obj) => {
   if(obj){
     // Перевіряємо чи обʼєкт полів для друку товару товару
     if(!obj?.product){
