@@ -3,9 +3,9 @@
 ### Модуль для створення html структури етикеток
 
 1. Для встановлення прописуємо в package.json
-  ```
-    "create-label-html-data": "git+https://ansible:ansible_pass@git.skyservice.pro/skyservice/nodejs/bootstrap-vue.git#master",
-  ```
+```
+  "create-label-html-data": "git+https://ansible:ansible_pass@git.skyservice.pro/skyservice/nodejs/bootstrap-vue.git#master",
+```
 
 ### Які обʼєкти очікуються
 1. Об'єкт товару
@@ -30,33 +30,31 @@ product: {
 2. Об'єкт налаштувнь принтеру
 ```js
 dataPrinter: {
-  dataPrinter: {
-    labelParams: {
-      fields ["Поля для друку"] // Поля які треба друкувати
-    },
-    sizes: {
-      barWidth: "",
-      barcodeFont: "",
-      barcodeHeight: "",
-      dateTimeFont: "",
-      density: "",
-      descriptionFont: "",
-      direction: "",
-      dpi: "",
-      gap: "",
-      labelHeightMM: "",
-      labelHeightPX: "",
-      labelWidthMM: "",
-      labelWidthPX: "",
-      manufacturerFont: "",
-      nameFont: "",
-      nameLength: "",
-      priceFont: "",
-      sizeFont: "",
-      typeFont: "",
-      vendorCodeFont: "",
-      weightFont: ""
-    }
+  labelParams: {
+    fields ["Поля для друку"] // Поля які треба друкувати
+  },
+  sizes: {
+    barWidth: "",
+    barcodeFont: "",
+    barcodeHeight: "",
+    dateTimeFont: "",
+    density: "",
+    descriptionFont: "",
+    direction: "",
+    dpi: "",
+    gap: "",
+    labelHeightMM: "",
+    labelHeightPX: "",
+    labelWidthMM: "",
+    labelWidthPX: "",
+    manufacturerFont: "",
+    nameFont: "",
+    nameLength: "",
+    priceFont: "",
+    sizeFont: "",
+    typeFont: "",
+    vendorCodeFont: "",
+    weightFont: ""
   }
 }
 ```
