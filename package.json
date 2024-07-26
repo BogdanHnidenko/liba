@@ -2,16 +2,13 @@
   "name": "create-label-html-data",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/main.js",
+  "main": "dist/bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production"
   },
   "dependencies": {
     "jsbarcode": "^3.11.6"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.24.9",
