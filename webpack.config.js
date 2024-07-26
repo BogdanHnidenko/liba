@@ -4,7 +4,10 @@ module.exports = {
   entry: './src/index.js', // ваш вхідний файл
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    library: 'create-label-html-data',
+    libraryTarget: 'umd',
+    globalObject: 'this'
   },
   module: {
     rules: [
@@ -19,5 +22,8 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js']
   }
 };
