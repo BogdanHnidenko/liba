@@ -3,9 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/bundle.js",
+  "module": "dist/bundle.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "webpack --mode production"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BogdanHnidenko/liba.git"
+  },
+  "homepage": "https://github.com/BogdanHnidenko/liba.git#master",
   "dependencies": {
     "jsbarcode": "^3.11.6"
   },
