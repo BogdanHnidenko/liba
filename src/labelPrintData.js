@@ -2,34 +2,27 @@
 import formString from "./formStrings.js"; // Модуль створення рядків
 import createHTML from "./createHTML.js"; // Модуль створення html розмітки
 
-export default (obj) => {
+export default (obj, devMode) => {
   if(obj){
-    // Перевіряємо чи обʼєкт полів для друку товару товару
-    if(!obj?.product){
-			console.error("create-label-html-data -> Не знайдено обʼєкт товару")
-			return
-		}
-    // Перевіряємо чи обʼєкт налаштувань принтеру
-    if(!obj?.dataPrinter){
-			console.error("create-label-html-data -> Не знайдено обʼєкт налаштувань принтеру")
-			return
-		}
-    // Перевіряємо чи обʼєкт перекладів
-    if(!obj?.translate){
-			console.error("create-label-html-data -> Не знайдено обʼєкт перекладів")
-			return
-		}
-    // Перевіряємо чи обʼєкт функцій
-    if(!obj?.func){
-			console.error("create-label-html-data -> Не знайдено обʼєкт функцій")
-			return
-		}
+    // Обʼєкт для перевірки наявності всіх налаштувань
+    const checkObj = {
+      product: "create-label-html-data -> Не знайдено обʼєкт товару",
+      dataPrinter: "create-label-html-data -> Не знайдено обʼєкт налаштувань принтеру",
+      translate: "create-label-html-data -> Не знайдено обʼєкт перекладів",
+      func: "create-label-html-data -> Не знайдено обʼєкт функцій"
+    }
+    for(let key in checkObj){
+      if(!obj[key]) {
+        console.error(checkObj[key])
+        return
+      }
+    }
     try {
       // Створюємо рядки для формування html
-      const strings = formString(obj);
-      if(strings.length) {
+      const strings = formString(obj, devMode);
+      if(strings?.length) {
         // Створюємо html структуру
-        const html = createHTML(strings, data.dataPrinter)?.outerHTML;
+        const html = createHTML(strings, obj.dataPrinter, devMode)?.outerHTML;
         if (html) return html
       }
     } catch (err){

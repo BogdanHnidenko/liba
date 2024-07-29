@@ -1,20 +1,39 @@
 # create-label-html-data
 
 ### Модуль для створення html структури етикеток
+Створює структуру чеку яка буде передаватись на принтери етикеток
 
+### Встановлення модуля та рообота з ним в проекті
 1. Для встановлення пакету прописуємо в package.json
 ```
-  create-label-html-data": "git+https://ansible:ansible_pass@git.skyservice.pro/skyservice/nodejs/bootstrap-vue.git#master,
+  create-label-html-data": "git+https://ansible:ansible_pass@git.skyservice.pro/skyservice/nodejs/bootstrap-vue.git#master
 ```
 2. Для оновлення пакету прописуємо 
 ```
-  npm install create-label-html-data,
+  npm install create-label-html-data
+```
+3. Імпортуємо в проект
+```
+	import labelPrintData from "create-label-html-data";
+```
+4. Додаємо данні для роботи
+```
+	const html = labelPrintData(obj, devMode)
+```
+obj - це обʼєкт данних, devMode - boolean змінна для додаткових повідомлень про помилки
+```js
+	obj = {
+    product: {},      // Об'єкт товару
+    dataPrinter: {},  // Об'єкт налаштувнь принтеру
+    translate: {},    // Об'єкт перекладу
+    func: {}          // Об'єкт з функціями
+  }
 ```
 
-### Робота з даним модулем
+### Робота з модулем
 1. Створення основного файлу js
 ```
-  npm run build,
+  npm run build
 ```
 
 ### Які обʼєкти очікуються
@@ -79,7 +98,7 @@ translate: {
 4. Об'єкт з функціями
 ```js
 func: {
-  currencyFormatted: ()=>{},    // Назва товару
-  unit: ()=>{},                 // Виробник товару
+  currencyFormatted: ()=>{},    // Форматування цифр в 2 цифри після коми
+  unit: ()=>{},                 // Переклади одиниць виміру
 }
 ```
