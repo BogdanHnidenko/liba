@@ -14,15 +14,15 @@
 ```
 3. Імпортуємо в проект
 ```
-	import labelPrintData from "create-label-html-data";
+  import labelPrintData from "create-label-html-data";
 ```
 4. Додаємо данні для роботи
 ```
-	const html = labelPrintData(obj, devMode)
+  const html = labelPrintData(obj, devMode)
 ```
 obj - це обʼєкт данних, devMode - boolean змінна для додаткових повідомлень про помилки
 ```js
-	obj = {
+  obj = {
     product: {},      // Об'єкт товару
     dataPrinter: {},  // Об'єкт налаштувнь принтеру
     translate: {},    // Об'єкт перекладу
